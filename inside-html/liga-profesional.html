@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <title>WINNER | Liga Profesional</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="icon" href="/IMG/assets/loggo-winner.png">
+</head>
+<body>
+    <main id="pagina-torneo" data-competicion="Liga Profesional">
+        <header class="encabezado-torneo">
+            <p class="etiqueta-torneo">WINNER-TITULOS / PALMARÉS</p>
+            <h1 id="nombre-competicion">Liga Profesional</h1>
+            <p class="subtitulo-torneo">
+                Ranking histórico de campeones
+            </p>
+        </header>
+
+        <section class="estadisticas-torneo" aria-label="Estadísticas de la competición">
+            <article class="estadistica-torneo">
+                <span class="etiqueta-estadistica">EDICIONES</span>
+                <strong id="total-ediciones">—</strong>
+                <span class="detalle-estadistica">Temporadas registradas</span>
+            </article>
+            <article class="estadistica-torneo">
+                <span class="etiqueta-estadistica">CAMPEONES</span>
+                <strong id="total-campeones">—</strong>
+                <span class="detalle-estadistica">Equipos diferentes</span>
+            </article>
+            <article class="estadistica-torneo estadistica-lider">
+                <span class="etiqueta-estadistica">LÍDER HISTÓRICO</span>
+                <img id="escudo-lider" class="escudo-lider" alt="" hidden>
+                <strong id="nombre-lider">—</strong>
+                <span id="titulos-lider" class="detalle-estadistica">
+                    Títulos confirmados
+                </span>
+            </article>
+        </section>
+
+        <section class="seccion-ranking">
+            <div class="titulo-seccion-ranking">
+                <div>
+                    <p class="etiqueta-torneo">HISTORIAL</p>
+                    <h2>Ranking histórico</h2>
+                </div>
+                <span id="cantidad-equipos" class="contador-equipos">
+                    0 equipos
+                </span>
+            </div>
+            <div id="ranking-competicion" class="ranking-competicion">
+                <p class="mensaje-carga">Cargando palmarés...</p>
+            </div>
+        </section>
+    </main>
+
+
+    <!--VINCULACION A LOS JAVA SCRIPTS INCLUYENDO LA API DE GOOGLE SHEETS PARA PODER LEERLOS-->
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.5.3/papaparse.min.js"></script>
+    <script src="../JS/datos.js"></script>
+    <script src="../JS/torneo.js"></script>
+</body>
+</html>

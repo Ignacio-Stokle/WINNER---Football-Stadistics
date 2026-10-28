@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <title>WINNER | Equipos de Argentina</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="icon" href="/IMG/assets/loggo-winner.png">
+</head>
+<body>
+    <header>
+        <div class="presentacion">
+            <img src="../IMG/assets/afa-logo.png" alt="AFA">
+            <h1>Equipos Argentinos</h1>
+        </div>
+    </header>
+    <main id="pagina-equipos" data-region="Argentina">
+        <div id="lista-equipos"></div>
+
+        <section id="perfil-equipo" hidden>
+            <button id="volver-equipos" type="button">
+                ← Volver a los equipos
+            </button>
+
+            <h2 id="nombre-equipo"></h2>
+            <p>Total de títulos: <strong id="total-titulos">0</strong></p>
+
+            <div id="lista-titulos"></div>
+        </section>
+    </main>
+
+    <!--VINCULACION A LOS JAVA SCRIPTS INCLUYENDO LA API DE GOOGLE SHEETS PARA PODER LEERLOS-->
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.5.3/papaparse.min.js"></script>
+    <script src="../JS/datos.js"></script>
+    <script src="../JS/listado-equipos.js"></script>
+</body>
+</html>

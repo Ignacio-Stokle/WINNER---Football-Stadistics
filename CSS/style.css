@@ -1,0 +1,716 @@
+:root{
+    --color-primario: #111827;
+    --color-secundario: #283548;
+    --color-terciario: #4B5563;
+    --color-acento: #f2a93b;
+    --color-texto: #EDEDED;
+    --color-texto-secundario: #9CA3AF;
+
+    --fuente-principal: "Rubik", sans-serif;
+    --fuente-titulo: "Big Shoulders", Impact, sans-serif;
+}
+/* RESET BÁSICO */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    height: 100vh;
+
+    background-color: var(--color-primario);
+    font-family: var(--fuente-principal);
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+img{
+    height: 15vh;
+}
+main{
+    padding: 3rem;
+}
+
+/* ===== SELECTORES PRINCIPALES ===== */
+.seccion-selector{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-contenedor {
+    width: 90%;
+    height: fit-content;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+/* Enlaces */
+.main-contenedor > a {
+    display: block;
+    min-width: 0;
+    color: #E2E8F0;
+    text-decoration: none;
+    border-radius: 16px;
+    outline-offset: 5px;
+}
+
+/* Tarjeta */
+.main-contenedor > a > section {
+    position: relative;
+    isolation: isolate;
+    min-height: 250px;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+
+    padding: 2rem 1.5rem;
+    text-align: center;
+
+    background: linear-gradient(
+        145deg,
+        #1D2633 0%,
+        #171D28 100%
+    );
+
+    border: 1px solid #344052;
+    border-radius: 16px;
+
+    box-shadow: 0 8px 22px rgb(0 0 0 / 18%);
+
+    transition:
+        transform 220ms ease,
+        border-color 220ms ease,
+        box-shadow 220ms ease,
+        background 220ms ease;
+}
+#selector-lib{
+    width: 100%;
+}
+
+/* Brillo decorativo */
+.main-contenedor > a > section::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 190px;
+    height: 190px;
+    top: -95px;
+    right: -75px;
+    border-radius: 50%;
+    background: rgb(242 169 59 / 8%);
+    filter: blur(4px);
+    transition:
+        transform 300ms ease,
+        background 300ms ease;
+}
+
+/* Línea dorada inferior */
+.main-contenedor > a > section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    width: 70%;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+    background: #F2A93B;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 220ms ease;
+}
+
+/* Iconos, escudos y logos */
+.main-contenedor > a > section img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    flex-shrink: 0;
+
+    filter: drop-shadow(0 5px 8px rgb(0 0 0 / 20%));
+
+    transition:
+        transform 250ms ease,
+        filter 250ms ease;
+}
+
+/* Títulos */
+.main-contenedor > a > section h2 {
+    margin: 0;
+    color: #E2E8F0;
+    font-family: "Big Shoulders", sans-serif;
+    font-size: clamp(1.7rem, 2.5vw, 2.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: 0.5px;
+    text-wrap: balance;
+    transition: color 220ms ease;
+}
+
+/* Interacción con mouse */
+@media (hover: hover) {
+    .main-contenedor > a:hover > section {
+        transform: translateY(-7px);
+        border-color: #F2A93B;
+        background: linear-gradient(
+            145deg,
+            #283548 0%,
+            #1D2633 100%
+        );
+        box-shadow:
+            0 15px 32px rgb(0 0 0 / 28%),
+            0 0 0 1px rgb(242 169 59 / 10%);
+    }
+
+    .main-contenedor > a:hover > section::before {
+        transform: scale(1.35);
+        background: rgb(242 169 59 / 13%);
+    }
+
+    .main-contenedor > a:hover > section::after {
+        transform: scaleX(1);
+    }
+
+    .main-contenedor > a:hover > section img {
+        transform: scale(1.08);
+        filter: drop-shadow(0 7px 12px rgb(242 169 59 / 15%));
+    }
+
+    .main-contenedor > a:hover > section h2 {
+        color: #F2A93B;
+    }
+}
+
+/* Navegación con teclado */
+.main-contenedor > a:focus-visible {
+    outline: 2px solid #F2A93B;
+}
+
+
+
+/* Respeta la preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    .main-contenedor > a > section,
+    .main-contenedor > a > section img,
+    .main-contenedor > a > section h2,
+    .main-contenedor > a > section::before,
+    .main-contenedor > a > section::after {
+        transition: none;
+    }
+}
+
+/* =========================================
+        PÁGINAS DE EQUIPOS
+========================================= */
+
+/* HEADER DE EQUIPOS */
+header{
+    background-color: var(--color-secundario);
+    padding: 2rem;
+    border-bottom: 3px solid var(--color-acento);
+}
+
+#lista-equipos{
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(150px, .5fr));
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+}
+
+.presentacion{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: var(--fuente-titulo);
+    font-size: clamp(.7rem, 3vh, 1.5rem);
+    color: var(--color-texto);
+    gap: 1rem;
+}
+/* Tarjeta completa del equipo */
+.tarjeta-equipo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 20px;
+    min-height: 4vh;
+
+    background: var(--color-secundario);
+    color: var(--color-texto);
+    border: 1px solid var(--color-secundario);
+    border-radius: 12px;
+
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+/* Efecto al pasar el cursor */
+.tarjeta-equipo:hover {
+    background: var(--color-terciario);
+    color: var(--color-texto-secundario);
+    transform: translateY(-3px);
+}
+
+/* Escudo de la tarjeta */
+.escudo-equipo {
+    width: auto;
+    height: 9vh;
+    object-fit: contain;
+}
+
+/* Nombre del club */
+.nombre-equipo {
+    font-size: .9rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+#lista-titulos{
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    color: var(--color-texto);
+}
+
+/* Escudo de la ficha abierta */
+.escudo-perfil-equipo {
+    display: block;
+    width: auto;
+    height: 15vh;
+    object-fit: contain;
+    margin: 0 auto 15px;
+}
+
+/* Cada competición y sus años */
+.fila-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+
+    padding: 12px 16px;
+    background: var(--color-secundario);
+    color: var(--color-texto);
+    border: 1px solid var(--color-secundario);
+    border-radius: 8px;
+}
+
+#volver-equipos {
+    width: fit-content;
+    background: var(--color-terciario);
+    color: var(--color-texto);
+    border: 1px solid var(--color-secundario);
+    border-radius: 8px;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    margin-bottom: 3rem;
+}
+
+#volver-equipos:hover {
+    background: var(--color-secundario);
+    color: var(--color-texto-secundario);
+    transform: translateY(-3px);
+}
+/* Ficha del equipo por encima del resto de la página */
+#perfil-equipo {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+
+    padding: 3rem;
+    margin-top: 200px;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+#perfil-equipo p{
+    color: var(--color-texto);
+}
+#perfil-equipo h2{
+    color: var(--color-acento);
+}
+
+/* Ocultar correctamente los elementos que tengan hidden */
+#perfil-equipo[hidden],
+#lista-equipos[hidden] {
+    display: none !important;
+}
+
+
+
+/* =========================================
+   WINNER-TITULOS — PÁGINAS DE COMPETICIONES
+========================================= */
+
+#pagina-torneo {
+    --torneo-fondo: #12161F;
+    --torneo-tarjeta: #1D2633;
+    --torneo-hover: #283548;
+    --torneo-dorado: #F2A93B;
+    --torneo-texto: #E2E8F0;
+    --torneo-secundario: #C9CFE8;
+
+    width: 100%;
+    margin: 0 auto;
+    padding: clamp(1rem, 4vw, 3rem);
+    box-sizing: border-box;
+    color: var(--torneo-texto);
+}
+
+/* Encabezado */
+
+.encabezado-torneo {
+    padding: clamp(1.5rem, 4vw, 3rem);
+    margin: 1rem 1rem 1.5rem 1rem;
+
+    background:
+        linear-gradient(120deg, #1D2633 0%, #12161F 100%);
+
+    border: 1px solid #283548;
+    border-radius: 18px;
+    border-left: 4px solid var(--torneo-dorado);
+}
+
+.etiqueta-torneo {
+    margin: 0 0 0.65rem;
+    color: var(--torneo-dorado);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+#nombre-competicion {
+    margin: 0;
+    font-family: "Big Shoulders", sans-serif;
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.subtitulo-torneo {
+    margin: 0.8rem 0 0;
+    color: var(--torneo-secundario);
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   ESTADÍSTICAS SUPERIORES
+========================================= */
+
+.estadisticas-torneo {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1rem 1rem 3rem 1rem;
+}
+
+.estadistica-torneo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.55rem;
+
+    min-width: 0;
+    min-height: 145px;
+    padding: 1.35rem;
+
+    background: var(--torneo-tarjeta);
+    border: 1px solid #283548;
+    border-radius: 14px;
+
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+
+.etiqueta-estadistica {
+    color: var(--torneo-secundario);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+}
+
+.estadistica-torneo > strong {
+    color: var(--torneo-dorado);
+    font-family: "Big Shoulders", sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+}
+
+.detalle-estadistica {
+    color: var(--torneo-secundario);
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+.estadistica-lider {
+    position: relative;
+}
+
+.estadistica-lider > strong {
+    font-family: "Rubik", sans-serif;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    line-height: 1.3;
+}
+
+.escudo-lider {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+}
+
+/* =========================================
+   ENCABEZADO DEL RANKING
+========================================= */
+
+.seccion-ranking {
+    margin: 1rem;
+}
+
+.titulo-seccion-ranking {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.titulo-seccion-ranking h2 {
+    margin: 0;
+    font-family: "Big Shoulders", sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.titulo-seccion-ranking .etiqueta-torneo {
+    margin-bottom: 0.3rem;
+}
+
+.contador-equipos {
+    padding: 0.5rem 0.8rem;
+    color: var(--torneo-secundario);
+    background: var(--torneo-tarjeta);
+    border: 1px solid #283548;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+/* =========================================
+   TARJETAS DEL RANKING
+========================================= */
+
+.ranking-competicion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.tarjeta-ranking {
+    display: grid;
+    grid-template-columns: 42px 52px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 1.1rem 1.25rem;
+
+    background: var(--torneo-tarjeta);
+    border: 1px solid #283548;
+    border-radius: 12px;
+
+    transition:
+        background 0.2s,
+        border-color 0.2s,
+        transform 0.2s;
+}
+
+.tarjeta-ranking:hover {
+    background: var(--torneo-hover);
+    border-color: var(--torneo-dorado);
+    transform: translateX(3px);
+}
+
+/* Número de posición */
+
+.puesto-ranking {
+    display: grid;
+    place-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    color: var(--torneo-dorado);
+    background: #283548;
+    border: 1px solid #3B475B;
+    border-radius: 10px;
+
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+/* Escudo de cada club */
+
+.escudo-ranking {
+    display: block;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+/* Nombre, barra y años */
+
+.informacion-ranking {
+    min-width: 0;
+}
+
+.nombre-ranking {
+    margin: 0 0 0.65rem;
+    color: var(--torneo-texto);
+    font-size: 1rem;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+/* Fondo de la barra */
+
+.barra-fondo {
+    width: 100%;
+    height: 7px;
+    overflow: hidden;
+
+    background: #12161F;
+    border-radius: 999px;
+}
+
+/* Barra proporcional a los títulos */
+
+.barra-progreso {
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        #C98723,
+        #F2A93B
+    );
+    border-radius: inherit;
+    transition: width 0.5s ease;
+}
+
+.temporadas-ranking {
+    margin: 0.65rem 0 0;
+    color: var(--torneo-secundario);
+    font-size: 0.8rem;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+/* Cantidad de títulos */
+
+.cantidad-ranking {
+    color: var(--torneo-dorado);
+    font-size: 0.9rem;
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* Mensajes de carga o de error */
+
+.mensaje-carga,
+.ranking-competicion > p {
+    padding: 1.5rem;
+    color: var(--torneo-secundario);
+    background: var(--torneo-tarjeta);
+    border: 1px solid #283548;
+    border-radius: 12px;
+    line-height: 1.6;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 650px) {
+    #pagina-torneo {
+        padding: 1rem;
+    }
+
+    .estadisticas-torneo {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.7rem;
+        margin-bottom: 2rem;
+    }
+
+    .estadistica-torneo {
+        min-height: 120px;
+        padding: 1rem;
+    }
+
+    .estadistica-lider {
+        grid-column: 1 / -1;
+        min-height: 100px;
+    }
+
+    .estadistica-lider > strong {
+        font-size: 1.2rem;
+    }
+
+    .tarjeta-ranking {
+        grid-template-columns: 34px 40px minmax(0, 1fr);
+        gap: 0.7rem;
+        padding: 0.85rem;
+    }
+
+    .puesto-ranking {
+        width: 32px;
+        height: 32px;
+        font-size: 0.85rem;
+    }
+
+    .escudo-ranking {
+        width: 38px;
+        height: 38px;
+    }
+
+    .nombre-ranking {
+        font-size: 0.9rem;
+    }
+
+    .cantidad-ranking {
+        grid-column: 3;
+        text-align: left;
+        font-size: 0.8rem;
+    }
+
+    .titulo-seccion-ranking {
+        align-items: flex-start;
+    }
+
+    .contador-equipos {
+        font-size: 0.7rem;
+    }
+}
