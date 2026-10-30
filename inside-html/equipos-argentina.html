@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
 
     <title>WINNER | Equipos de Argentina</title>
     <link rel="stylesheet" href="/CSS/style.css">
     <link rel="icon" href="/IMG/assets/loggo-winner.png">
 </head>
+
 <body>
     <header class="equipos-header">
         <div class="presentacion">
@@ -20,6 +25,7 @@
         </div>
     </header>
     <main id="pagina-equipos" data-region="Argentina">
+        <a href="#seccion-ranking-trofeos" class="boton-ranking" id="botonRanking">VER RANKING DE TROFEOS</a>
         <div id="lista-equipos"></div>
 
         <section id="perfil-equipo" hidden>
@@ -32,6 +38,23 @@
 
             <div id="lista-titulos"></div>
         </section>
+
+        <section id="seccion-ranking-trofeos" class="seccion-ranking">
+            <div class="titulo-seccion-ranking">
+                <h2>Ranking de Trofeos</h2>
+                <p>Los equipos argentinos más laureados</p>
+            </div>
+
+            <div id="lider-trofeos">
+                <span class="lider-trofeos__etiqueta">Líder</span>
+                <img id="escudo-lider-trofeos" alt="Escudo del líder">
+                <strong id="nombre-lider-trofeos">Cargando...</strong>
+            </div>
+
+            <div id="ranking-trofeos">
+                Cargando ranking...
+            </div>
+        </section>
     </main>
 
     <!--VINCULACION A LOS JAVA SCRIPTS INCLUYENDO LA API DE GOOGLE SHEETS PARA PODER LEERLOS-->
@@ -39,4 +62,5 @@
     <script src="../JS/datos.js"></script>
     <script src="../JS/listado-equipos.js"></script>
 </body>
+
 </html>
