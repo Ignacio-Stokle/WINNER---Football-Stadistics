@@ -31,7 +31,7 @@ html {
 body {
     width: 100%;
     min-height: 100vh;
-    height: auto;
+    height: 100vh;
     background-color: var(--color-primario);
     font-family: var(--fuente-principal);
     font-size: 16px;
@@ -50,11 +50,11 @@ main {
 
 .seccion-selector {
     width: 100%;
-    min-height: 99vh;
-    height: auto;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+   
 }
 
 .main-contenedor {
@@ -240,6 +240,7 @@ header nav .titulo-logo{
 }
 h1{
     color: var(--color-texto);
+    font-size: clamp(1.1rem, 2.5vh, 1.5rem);
 }
 .titulo-logo:hover{
     color: var(--color-texto);
@@ -253,7 +254,6 @@ h1{
     align-items: center;
     justify-content: center;
     font-family: var(--fuente-titulo);
-    font-size: clamp(.5rem, 1.5vh, 1.5rem);
     color: var(--color-texto);
     gap: 1rem;
 }
