@@ -220,7 +220,8 @@ main {
     background-color: var(--color-secundario);
     border-bottom: 3px solid var(--color-acento);
     padding: 5px;
-    position: fixed;
+    position: sticky;
+    top: 0;
     z-index: 1000;
 }
 
@@ -336,7 +337,6 @@ header nav .navbar-toggler-icon {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(130px, .5fr));
     margin: auto;
-    margin-top: 220px;
     gap: 1.2rem;
     flex-wrap: nowrap;
 }
