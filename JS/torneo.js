@@ -478,3 +478,4 @@ function rutaEscudo(nombre) {
     // Ejemplo: ../IMG/Escudos/atletico-tucuman.png
     return `../IMG/Escudos/${archivo}.png`;
 }
+ 

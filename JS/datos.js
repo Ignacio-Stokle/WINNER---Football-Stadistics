@@ -387,3 +387,4 @@ function crearElemento(etiqueta, texto = "", clase = "") {
     // pueda agregarlo al HTML mediante append(), por ejemplo.
     return elemento;
 }
+ 

@@ -467,7 +467,7 @@ function mostrarPerfilEquipo(equipo, datos) {
 
         // hidden=true oculta el elemento HTML.
         seccionRanking.hidden = true;
-    }
+    } 
 
 
     // --------------------------------------------------------
