@@ -30,12 +30,17 @@ html {
 
 body {
     width: 100%;
-    height: 100vh;
-
+    min-height: 100vh;
+    height: auto;
     background-color: var(--color-primario);
     font-family: var(--fuente-principal);
     font-size: 16px;
     line-height: 1.65;
+}
+main {
+    height: 100%;
+    width: 100%;
+    padding: 2.2rem;
 }
 
 /* =========================================
@@ -45,7 +50,8 @@ body {
 
 .seccion-selector {
     width: 100%;
-    height: 100%;
+    min-height: 99vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -209,11 +215,6 @@ body {
 ========================================= */
 
 /* HEADER DE EQUIPOS */
-
-main {
-    padding: 2.2rem;
-}
-
 .equipos-header {
     width: 100%;
     height: fit-content;
