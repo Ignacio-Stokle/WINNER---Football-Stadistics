@@ -271,7 +271,7 @@ main{
     background: var(--color-terciario);
     color: var(--color-texto-secundario);
     transform: translateY(-3px);
-}
+} 
 
 /* Escudo de la tarjeta */
 .escudo-equipo {
