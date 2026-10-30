@@ -13,23 +13,43 @@
         rel="stylesheet">
 
     <title>WINNER | Equipos de Argentina</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="/CSS/style.css">
     <link rel="icon" href="/IMG/assets/loggo-winner.png">
 </head>
 
 <body>
     <header class="equipos-header">
-        <div class="presentacion">
-            <img src="../IMG/assets/afa-logo.png" alt="AFA">
-            <h1>Equipos Argentinos</h1>
-        </div>
+        <nav class="navbar navbar-expand-md">
+            <div class="container-fluid presentacion">
+                <a class="navbar-brand titulo-logo" href="#">
+                    <img src="../IMG/assets/afa-logo.png" alt="AFA">
+                    <h1>Equipos Argentinos</h1>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="#seccion-ranking-trofeos" id="botonRanking" class="nav-link boton-ranking"><span>VER RANKING DE TROFEOS</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../index.html" class="nav-link boton-inicio"><span>INICIO</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
     <main id="pagina-equipos" data-region="Argentina">
-        <a href="#seccion-ranking-trofeos" class="boton-ranking" id="botonRanking">VER RANKING DE TROFEOS</a>
         <div id="lista-equipos"></div>
 
         <section id="perfil-equipo" hidden>
-            <button id="volver-equipos" type="button"> 
+            <button id="volver-equipos" type="button">
                 ← Volver a los equipos
             </button>
 
@@ -61,6 +81,10 @@
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.5.3/papaparse.min.js"></script>
     <script src="../JS/datos.js"></script>
     <script src="../JS/listado-equipos.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
